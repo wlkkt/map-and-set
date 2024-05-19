@@ -238,11 +238,10 @@ void test_map2()
 	}
 	cout << endl;
 
-	//允许存放多个相同key的键值对
+	//允许存放多个相同key的键值对，返回值类型是key所对应的迭代器
 	multimap<int, string> sortMap;
 	for (auto& kv : countMap)
 	{
-		//sortMap[kv.second] = kv.first;
 		sortMap.insert({ kv.second, kv.first });
 	}
 	cout << endl;
@@ -281,6 +280,8 @@ void test_map3()
 
 	string str;
 	cin >> str;
+
+	//返回指定key在map类类型的对象中的出现次数，也可以用于判定某个key是否存在
 	if (dict.count(str))
 	{
 		cout << "在" << endl;
